@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   favorites: [],
-} ;
+};
 
 const favoritesSlice = createSlice({
   name: 'favorites',
@@ -24,7 +24,7 @@ const favoritesSlice = createSlice({
     setSavedFavorites(state, action) {
       state.favorites = action.payload;
     },
-    editFavorite(state, action){
+    editFavorite(state, action) {
       const { query, title, id, order, resultsPerPage } = action.payload;
       const favorite = {
         query,
@@ -40,8 +40,16 @@ const favoritesSlice = createSlice({
     deleteFavoriteItem(state, action) {
       state.favorites = state.favorites.filter(item => item.id !== action.payload.id);
     },
+    logOutFavotite(state) {
+      state.favorites = [];
+    },
   },
 });
 
-export const { setFavorites, setSavedFavorites, editFavorite, deleteFavoriteItem } = favoritesSlice.actions;
+export const {
+  setFavorites,
+  setSavedFavorites,
+  editFavorite,
+  deleteFavoriteItem,
+  logOutFavotite } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

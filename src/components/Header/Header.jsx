@@ -1,18 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Menu, Row, Col } from 'antd';
-import { setIsLoggedIn } from '../../store/userSlice';
+import { setIsLoggedIn, logOutUser } from '../../store/userSlice';
 import { logOut } from '../../store/videoSlice';
+import { logOutFavotite } from '../../store/favoritesSlice';
 import { Logo } from '../Logo';
 
 export const Header = () => {
   const reduxDispatch = useDispatch();
 
   const handleLoginOut = () => {
-    console.log('out');
     localStorage.removeItem('authToken');
     localStorage.removeItem('authUser');
     reduxDispatch(logOut());
+    reduxDispatch(logOutUser());
+    reduxDispatch(logOutFavotite());
     reduxDispatch(setIsLoggedIn(false));
   };
 

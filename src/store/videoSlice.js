@@ -39,8 +39,11 @@ const videoSlice = createSlice({
     logOut(state) {
       state.videos = [];
       state.totalCount = 0;
+      state.status = null;
       state.isLoading = false;
       state.query = '';
+      state.isGrid = true;
+      state.total = 0;
     },
   },
 

@@ -4,20 +4,16 @@ import { Header } from './components';
 import { Layout, Row, Col } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setUsername } from './store/userSlice';
 import { setSavedFavorites } from './store/favoritesSlice';
-
-import { getUser } from './api/login';
 
 function App() {
   const reduxDispatch = useDispatch();
   const { isLoggedIn } = useSelector(state => state.user);
+
   useEffect(() => {
     if (isLoggedIn) {
-      const user = getUser();
-      const favorites = localStorage.getItem(user.username);
-
-      reduxDispatch(setUsername(user.username));
+      const user = localStorage.getItem('authUser');
+      const favorites = localStorage.getItem(user);
       if (favorites) {
         reduxDispatch(setSavedFavorites(JSON.parse(favorites)));
       }
