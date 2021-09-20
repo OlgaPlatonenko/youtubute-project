@@ -1,0 +1,15 @@
+.searchTitle{
+  font-size: 36px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.toolTipWrapper {
+  position: absolute;
+  width: 23px;
+  height: 28px;
+  right: 10.5%;
+  top: 17%;
+}
+.searchContainer{
+  position: relative;
+}

@@ -8,63 +8,42 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ТЗ: white_check_mark Реализация SPA В данном задании необходимо реализовать приложение для поиска youtube-видео по ключевым словам, а также сохранение запросов поиска. При реализации интерфейса рекомендуется использовать Ant Design.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Интерфейс готового приложения должен состоять из тех же страниц, что указаны в прототипе, НО, в точности соответствовать дизайну необязательно.
 
-### `npm test`
+Требования
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Реализовать страницу авторизации пользователя с формой входа: логин, пароль. Для аутентификации можно использовать json-файл со списком пользователей. После входа, необходимо сгенерировать и сохранить токен. Полученный токен использовать для авторизации - проверка наличия токена в localStorage, если токена нет, значит пользователь не авторизован (видит только страницу авторизации).
 
-### `npm run build`
+После авторизации пользователь должен попадать на главную страницу сервиса, на которой расположена строка поиска. Необходимо реализовать поиск youtube-видео, при помощи Youtube API. Результаты поиска вывести на той же странице в виде карточек видео (подобно тому, как оно реализовано в youtube). Список видео может принимать два вида: список (одно видео в строку с описанием) и карточки (несколько видео в строку). По умолчанию необходимо вывести 12 видео в виде списка.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Также, в приложении должна быть реализована страница “Сохраненные запросы”, на которой выводится список сохраненных запросов. Запросы этого списка можно редактировать или выполнить.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Чтобы выполнить запрос, необходимо нажать кнопку “Выполнить”, после чего происходит переход на главную страницу, на которой отображаются результаты запроса, при этом, количество выводимых видео равно количеству, указанному при сохранении запроса (см. ниже, Максимальное количество)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Для сохранения запроса необходимо добавить в строке поиска на главной странице иконку “Сохранить поиск”, при нажатии на которую открывается форма.
 
-### `npm run eject`
+В форме заранее заполнено значение из строки поиска в неизменяемом поле “Запрос” и отображается пустое поле “Название”, а также дополнительные пустые поля: Сортировать по (выпадающий список, доступные значения взять из API YouTube), Максимальное количество (числовое значение от 0 до 50).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Пользователь должен ввести название запроса, и, после этого, может сохранить запрос, остальные поля - опциональные, т.е. могут быть не заполнены.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Редактирование запроса происходит по нажатию на кнопку “Редактировать”. После этого открывается форма редактирования. Для редактирования использовать тот же компонент, что и для сохранения запроса. Обратите внимание, что при редактировании запроса можно изменять все поля формы, включая сам запрос.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Реализовать выход пользователя из сервиса.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+После повторного входа пользователя сохраненные запросы должны отображаться. Если пользователь - другой, то отображать запросы соответствующие для него (другого). Для хранения можно использовать localStorage браузера. Либо другие методы на усмотрение исполнителя.
 
-## Learn More
+Рекомендуется Использование библиотеки axios для запросов.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ссылка на макет: https://tinyurl.com/y2qshhbg
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+clock1 Рекомендуемое время выполнения тестового задания: 2-3 дня
 
-### Code Splitting
+information_source Полезное
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+YouTube API: https://developers.google.com/youtube/v3/docs/
+Axios: https://github.com/axios/axios
+Ant Design: https://ant.design/
+Redux: https://redux.js.org/
+React Router: https://reacttraining.com/react-router/
