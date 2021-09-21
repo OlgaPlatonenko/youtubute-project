@@ -28,6 +28,7 @@ function SearchScreen() {
   };
 
   useEffect(() => {
+    if (search.status !== 'fullfiled') return;
     reduxDispatch(searchVideosStats(search.videoIdList));
   }, [reduxDispatch, search.status, search.videoIdList]);
 

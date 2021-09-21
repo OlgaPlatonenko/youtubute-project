@@ -1,5 +1,4 @@
 import { List, Card } from 'antd';
-import VideoCard from '../VideoCard/VideoCard';
 
 export const VideoListTable = ({
   videos,

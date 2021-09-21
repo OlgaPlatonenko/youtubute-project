@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-
 import styles from './VideoCard.module.css';
 
 const numFormatter = new Intl.NumberFormat('ru');

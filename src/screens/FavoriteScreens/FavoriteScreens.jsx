@@ -6,8 +6,6 @@ import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { editFavorite, deleteFavoriteItem } from '../../store/favoritesSlice';
 import { setSearchQuery, searchVideos } from '../../store/videoSlice';
 import { FavoritesForm } from '../../components';
-import { FavoritesList } from '../../components';
-import { getUser } from '../../api/login';
 import styles from './FavoritesScreen.module.css';
 
 const { confirm } = Modal;
