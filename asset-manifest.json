@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/youtubute-project/static/css/main.4eb37342.chunk.css",
-    "main.js": "/youtubute-project/static/js/main.610cab44.chunk.js",
-    "main.js.map": "/youtubute-project/static/js/main.610cab44.chunk.js.map",
+    "main.css": "/youtubute-project/static/css/main.62c53580.chunk.css",
+    "main.js": "/youtubute-project/static/js/main.b7d385d7.chunk.js",
+    "main.js.map": "/youtubute-project/static/js/main.b7d385d7.chunk.js.map",
     "runtime-main.js": "/youtubute-project/static/js/runtime-main.0a541126.js",
     "runtime-main.js.map": "/youtubute-project/static/js/runtime-main.0a541126.js.map",
     "static/css/2.786ae0dd.chunk.css": "/youtubute-project/static/css/2.786ae0dd.chunk.css",
-    "static/js/2.fe307900.chunk.js": "/youtubute-project/static/js/2.fe307900.chunk.js",
-    "static/js/2.fe307900.chunk.js.map": "/youtubute-project/static/js/2.fe307900.chunk.js.map",
+    "static/js/2.fed0d01d.chunk.js": "/youtubute-project/static/js/2.fed0d01d.chunk.js",
+    "static/js/2.fed0d01d.chunk.js.map": "/youtubute-project/static/js/2.fed0d01d.chunk.js.map",
     "index.html": "/youtubute-project/index.html",
     "static/css/2.786ae0dd.chunk.css.map": "/youtubute-project/static/css/2.786ae0dd.chunk.css.map",
-    "static/css/main.4eb37342.chunk.css.map": "/youtubute-project/static/css/main.4eb37342.chunk.css.map",
-    "static/js/2.fe307900.chunk.js.LICENSE.txt": "/youtubute-project/static/js/2.fe307900.chunk.js.LICENSE.txt"
+    "static/css/main.62c53580.chunk.css.map": "/youtubute-project/static/css/main.62c53580.chunk.css.map",
+    "static/js/2.fed0d01d.chunk.js.LICENSE.txt": "/youtubute-project/static/js/2.fed0d01d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0a541126.js",
     "static/css/2.786ae0dd.chunk.css",
-    "static/js/2.fe307900.chunk.js",
-    "static/css/main.4eb37342.chunk.css",
-    "static/js/main.610cab44.chunk.js"
+    "static/js/2.fed0d01d.chunk.js",
+    "static/css/main.62c53580.chunk.css",
+    "static/js/main.b7d385d7.chunk.js"
   ]
 }
