@@ -65,7 +65,7 @@ function SearchScreen() {
             enterButton="Найти"
             size="large"
             onSearch={makeSearch}
-            suffix={suffix}
+            suffix={search.query ? suffix : null}
             onChange={(e) => setQuery(e.target.value)}
             value={query}
           />

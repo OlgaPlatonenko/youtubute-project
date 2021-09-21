@@ -5,9 +5,13 @@
     margin-bottom: 30px;  
 }
 
-.listicons{
-    margin-left: 10px;    
+.listicons{     
+    display: flex;    
 }
+.listiconsItem{
+  margin-right: 10px; 
+}
+
 .listicons:hover{
     cursor: pointer;  
 }

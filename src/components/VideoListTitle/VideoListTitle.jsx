@@ -22,8 +22,16 @@ export const VideoListTitle = () => {
         </div>
         <div className={styles.listnameright}>
           <div className={styles.listicons}>
-            <div onClick={() => {  reduxDispatch(setIsGrid()); }}> <UnorderedListOutlined /> </div>
-            <div onClick={() => {  reduxDispatch(setIsNotGrid()); }}><AppstoreOutlined /></div>
+            <div
+              className={styles.listiconsItem}
+              onClick={() => { reduxDispatch(setIsGrid()); }}
+            > <UnorderedListOutlined />
+            </div>
+            <div
+              className={styles.listiconsItem}
+              onClick={() => { reduxDispatch(setIsNotGrid()); }}
+            ><AppstoreOutlined />
+            </div>
           </div>
         </div>
       </div>

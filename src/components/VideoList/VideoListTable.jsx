@@ -27,7 +27,7 @@ export const VideoListTable = ({
               style={{ width: 300 }}
               cover={<iframe
                 title={item.id.videoId}
-                src={`https://www.youtube.com/embed/${item.videoId}`}></iframe>}
+                src={`https://www.youtube.com/embed/${item.id.videoId}`}></iframe>}
             >
               <Meta
                 title={item.snippet.title}

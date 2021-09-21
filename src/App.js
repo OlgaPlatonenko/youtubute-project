@@ -38,7 +38,7 @@ function App() {
         </Layout.Header>
       )}
 
-      <Layout.Content style={{ marginTop: 20, height: '100vh' }}>
+      <Layout.Content style={{ marginTop: 20, minHeight: '100vh' }}>
         <RouterView />
       </Layout.Content>
     </Layout>

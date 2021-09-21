@@ -34,7 +34,8 @@ export const Header = () => {
           </Menu.Item>
 
           <Menu.Item key="2" >
-            <NavLink to='/'>Поиск</NavLink>
+            <NavLink
+              to='/'>Поиск</NavLink>
           </Menu.Item>
 
           <Menu.Item key="3" >
