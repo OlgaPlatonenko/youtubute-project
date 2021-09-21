@@ -13,28 +13,29 @@ export const LoginForm = ({
       <Form
         name="basic"
         labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
+        wrapperCol={{ span: 24 }}
         className={styles.form}
         initialValues={initialValues}
         layout="vertical"
         onFinish={onSubmit}
       >
-        <Form.Item
-          label="Логин"
-          name="username"
-          rules={[{ required: true, message: 'Введите ваше имя' }]}
-        >
-          <Input />
-        </Form.Item>
+        <div className={styles.inputWrapper}>
+          <Form.Item
+            label="Логин"
+            name="username"
+            rules={[{ required: true, message: 'Введите ваше имя' }]}
+          >
+            <Input />
+          </Form.Item>
 
-        <Form.Item
-          label="Пароль"
-          name="password"
-          rules={[{ required: true, message: 'Введите пароль' }]}
-        >
-          <Input.Password />
-        </Form.Item>
-
+          <Form.Item
+            label="Пароль"
+            name="password"
+            rules={[{ required: true, message: 'Введите пароль' }]}
+          >
+            <Input.Password />
+          </Form.Item>
+        </div>
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button
             type="primary"
