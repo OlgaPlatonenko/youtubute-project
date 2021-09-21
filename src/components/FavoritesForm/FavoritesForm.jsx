@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMemo, useEffect } from 'react';
-import { Form, Input, Button, Select, Slider } from 'antd';
+import { Form, Input, Button, Select, Slider, Row, Col } from 'antd';
 
 const { Option } = Select;
 
@@ -46,7 +46,7 @@ export const FavoritesForm = ({
 
       <Form.Item
         name="order"
-        label="Select"
+        label="Сортировать по"
         hasFeedback
         rules={[{ required: true, message: 'Сортировать по...' }]}
       >
@@ -60,12 +60,17 @@ export const FavoritesForm = ({
         </Select>
       </Form.Item>
 
-      <Form.Item name="resultsPerPage" >
-        <Slider
-          min={12}
-          max={50}
-        />
-      </Form.Item>
+      <span >Максимальное количество</span>
+      <Row align='middle'>
+        <Col flex='auto'>
+          <Form.Item name="resultsPerPage" >
+            <Slider
+              min={12}
+              max={50}
+            />
+          </Form.Item>
+        </Col>
+      </Row>
 
       <Button onClick={onCancel}>
         {buttonTexts.cancelBtn}

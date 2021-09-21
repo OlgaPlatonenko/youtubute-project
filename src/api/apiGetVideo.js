@@ -9,7 +9,7 @@ const instance = axios.create({
     key: KEY,
     q: '',
     maxResults: 12,
-    order: 'date',
+    order: 'viewCount',
     resultsPerPage: 12,
   },
 });
