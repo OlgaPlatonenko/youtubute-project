@@ -1,8 +1,6 @@
 import { List } from 'antd';
 import VideoCard from '../VideoCard/VideoCard';
 
-import styles from './VideoList.module.css';
-
 export const VideoList = ({
   videos,
   resultsPerPage,
@@ -19,6 +17,7 @@ export const VideoList = ({
               videoId={item.id.videoId}
               title={item.snippet.title}
               description={item.snippet.description}
+              viewCount={item.viewCount}
             />
           </List.Item>
         )}

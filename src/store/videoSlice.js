@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getVideos } from '../api/apiGetVideo';
+import { getVideos, getVideosStats } from '../api/apiGetVideo';
 
 export const searchVideos = createAsyncThunk(
   'youtubeSearch/searchVideos',
@@ -13,12 +13,25 @@ export const searchVideos = createAsyncThunk(
   },
 );
 
+export const searchVideosStats = createAsyncThunk(
+  'youtubeSearch/getVideosStats',
+  async (videoId) => {
+    try {
+      const response = await getVideosStats(videoId);
+      return response;
+    } catch (err) {
+      return err;
+    }
+  },
+);
+
 const videoSlice = createSlice({
   name: 'youtubeSearch',
 
   initialState: {
     videos: [],
     status: null,
+    statusStats: null,
     query: '',
     isGrid: true,
   },
@@ -40,10 +53,12 @@ const videoSlice = createSlice({
       state.videos = [];
       state.totalCount = 0;
       state.status = null;
+      state.statusStats = null;
       state.isLoading = false;
       state.query = '';
       state.isGrid = true;
       state.total = 0;
+      state.videoIdList = '';
     },
   },
 
@@ -58,6 +73,23 @@ const videoSlice = createSlice({
       state.status = 'fullfiled';
       state.videos = action.payload.items;
       state.total = action.payload.pageInfo.totalResults;
+      state.videoIdList = '';
+      state.videos.forEach((video, idx, arr) => {
+        idx < arr.length - 1 ? state.videoIdList += (video.id.videoId + ',') : state.videoIdList += video.id.videoId;
+      });
+    },
+    [searchVideosStats.pending]: (state) => {
+      state.statusStats = 'pending';
+    },
+    [searchVideosStats.rejected]: (state, action) => {
+      state.statusStats = 'rejected';
+    },
+    [searchVideosStats.fulfilled]: (state, action) => {
+      state.statusStats = 'fullfiled';
+      state.videos.map(video => {
+        video.viewCount = action.payload.items.filter(el => el.id === video.id.videoId)[0]?.statistics.viewCount;
+        return video;
+      });
     },
   },
 },

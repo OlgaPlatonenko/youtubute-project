@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { v4 as uuidV4 } from 'uuid';
-import { Input, Modal, Typography, Row, Col } from 'antd';
+import { Input, Modal, Row, Col } from 'antd';
 import { HeartOutlined } from '@ant-design/icons';
-import { setSearchQuery, searchVideos } from '../../store/videoSlice';
+import { setSearchQuery, searchVideos, searchVideosStats } from '../../store/videoSlice';
 import { setFavorites } from '../../store/favoritesSlice';
 import { FavoritesForm, VideoListTitle, VideoListTable, VideoList } from '../../components';
-import styles from './SearchScreen.module.css';
 
 const { Search } = Input;
 
@@ -29,6 +27,10 @@ function SearchScreen() {
     await reduxDispatch(searchVideos({ q: query }));
   };
 
+  useEffect(() => {
+    reduxDispatch(searchVideosStats(search.videoIdList));
+  }, [reduxDispatch, search.status, search.videoIdList]);
+
   const suffix = (
     <HeartOutlined
       style={{
@@ -42,7 +44,7 @@ function SearchScreen() {
 
   const saveToFavorites = (values) => {
     const id = uuidV4();
-    reduxDispatch(setFavorites({ ...values,username,id }));
+    reduxDispatch(setFavorites({ ...values, username, id }));
     setModalOpen(false);
   };
 
